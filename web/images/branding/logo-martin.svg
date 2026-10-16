@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 200" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Martín Soldadura Especializada</title>
+  <defs>
+    <filter id="gCyan" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#00E5FF" flood-opacity=".6"/>
+    </filter>
+    <filter id="gPink" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.1" flood-color="#FF3B86" flood-opacity=".5"/>
+    </filter>
+  </defs>
+
+  <!-- Placa derecha -->
+  <rect x="132" y="48" width="392" height="104" rx="20" ry="20"
+        fill="#050505" stroke="#00E5FF" stroke-width="6.5" filter="url(#gCyan)"/>
+
+  <g fill="#FF3B86" filter="url(#gPink)"
+     font-family="Arial Black, Impact, Haettenschweiler, sans-serif"
+     font-weight="900" text-anchor="middle">
+    <text x="328" y="92" font-size="30" letter-spacing="2">SOLDADURA</text>
+    <text x="328" y="128" font-size="27" letter-spacing="1">ESPECIALIZADA</text>
+  </g>
+
+  <!-- Hexágono -->
+  <polygon points="104,14 172,53 172,131 104,170 36,131 36,53"
+           fill="#050505" stroke="#00E5FF" stroke-width="7.5"
+           stroke-linejoin="round" filter="url(#gCyan)"/>
+
+  <!-- M con borde blanco -->
+  <path d="M52 140 V54 h22 l30 54 30-54 h22 v86 h-20 V84 l-24 42 h-16 L72 84 v56 z"
+        fill="#00E5FF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Cinta MARTÍN -->
+  <rect x="70" y="112" width="68" height="24" rx="2.5" fill="#FF3B86"/>
+  <text x="104" y="129" text-anchor="middle"
+        font-family="Arial Black, Impact, sans-serif"
+        font-size="13" font-weight="900" letter-spacing="1.4" fill="#FFFFFF">MARTÍN</text>
+</svg>
