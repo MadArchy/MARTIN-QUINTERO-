@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Caveat:wght@600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=23" />
+  <link rel="stylesheet" href="css/styles.css?v=36" />
 </head>
 <body>
   <!-- Logo flotante neón (fondo transparente) -->
@@ -93,6 +93,9 @@
 
     <!-- SERVICIOS -->
     <section class="block services" id="servicios">
+      <div class="services-bg" aria-hidden="true">
+        <img src="images/services/fondo-acero-azul.png?v=29" alt="" />
+      </div>
       <div class="wrap">
         <div class="services-head">
           <div class="services-head__title">
@@ -155,40 +158,60 @@
     <!-- CONTACTO -->
     <section class="block contact" id="contacto">
       <div class="contact-bg"><img src="images/contact/workshop.jpg" alt="" /><div></div></div>
+      <div class="socials socials--float" id="socials" aria-label="Redes sociales"></div>
       <div class="wrap contact-inner">
-        <h2>HAGAMOS<br /><span>REALIDAD TU IDEA</span></h2>
-        <p class="contact-lead">Cuéntanos qué necesitas y recibe atención personalizada para evaluar tu proyecto.</p>
+        <div class="contact-head">
+          <div class="contact-head__copy">
+            <p class="kicker kicker--line">CONTACTO</p>
+            <h2 class="contact-title">
+              <span class="contact-title__line">HAGAMOS</span>
+              <span class="contact-title__line contact-title__line--cyan">REALIDAD TU IDEA</span>
+            </h2>
+            <p class="contact-lead">Cuéntanos qué necesitas y recibe atención personalizada para evaluar tu proyecto.</p>
+          </div>
+          <div class="contact-head__cta">
+            <a class="btn btn-pink" href="#" id="waBtn">COTIZAR AHORA POR WHATSAPP →</a>
+            <p class="wa-note" id="waNote"></p>
+          </div>
+        </div>
 
-        <div class="contact-row" id="contactRow"></div>
-
-        <a class="btn btn-pink" href="#" id="waBtn">COTIZAR AHORA POR WHATSAPP →</a>
-        <p class="wa-note" id="waNote"></p>
+        <div class="contact-body">
+          <div class="contact-info">
+            <div class="contact-row" id="contactRow"></div>
+            <aside class="contact-qr" id="contactQr">
+              <a class="contact-qr__link" id="qrMapsLink" href="https://maps.google.com/?q=7.89105766,-72.50244614" target="_blank" rel="noopener noreferrer">
+                <img id="qrMapsImg" src="images/contact/qr-ubicacion.png?v=36" alt="Código QR de ubicación en Google Maps" width="148" height="148" />
+              </a>
+              <div class="contact-qr__text">
+                <h3>Escanea para ver la ubicación</h3>
+                <p>Te lleva directo al mapa del taller en Google Maps.</p>
+              </div>
+            </aside>
+          </div>
+          <div class="contact-map">
+            <iframe
+              id="contactMap"
+              title="Ubicación Martín Soldadura Especializada en Google Maps"
+              src=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              hidden
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-top">
-      <a class="brand" href="#inicio">
-        <img src="images/branding/logo-martin.png" alt="Martín" />
-        <span><b>MARTÍN</b><i>SOLDADURA ESPECIALIZADA</i></span>
-      </a>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <div class="socials" id="socials"></div>
-    </div>
     <div class="wrap footer-bottom">
       <p>© <span id="year"></span> Martín Soldadura Especializada. Todos los derechos reservados.</p>
       <p class="hand tiny">Metal que construye un mejor mañana.</p>
     </div>
   </footer>
 
-  <script src="js/data.js?v=24"></script>
-  <script src="js/main.js?v=24"></script>
+  <script src="js/data.js?v=36"></script>
+  <script src="js/main.js?v=36"></script>
 </body>
 </html>

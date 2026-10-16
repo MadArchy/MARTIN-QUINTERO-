@@ -76,12 +76,6 @@
   const wa = waUrl();
   const contacts = [
     {
-      t: "WhatsApp",
-      d: ok(D.business.whatsapp) ? "Escríbenos directamente." : "Pendiente de configuración.",
-      i: ICO.wa,
-      h: wa,
-    },
-    {
       t: "Llámanos",
       d: ok(D.business.phone) ? D.business.phone : "Teléfono pendiente de configuración.",
       i: ICO.phone,
@@ -91,18 +85,37 @@
       t: "Visítanos",
       d: ok(D.business.address) ? D.business.address : "Dirección pendiente de configuración.",
       i: ICO.map,
-      h: null,
+      h: ok(D.business.mapsUrl) ? D.business.mapsUrl : null,
     },
   ];
 
   $("#contactRow").innerHTML = contacts
     .map((c) => {
-      const inner = `<div class="ico">${c.i}</div><h3>${c.t}</h3><p>${c.d}</p>`;
+      const inner = `<div class="ico" aria-hidden="true">${c.i}</div><div class="c-card__text"><h3>${c.t}</h3><p>${c.d}</p></div>`;
       return c.h
-        ? `<a class="c-card link" href="${c.h}"${c.t === "WhatsApp" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${inner}</a>`
+        ? `<a class="c-card link" href="${c.h}"${c.t === "Visítanos" ? ' target="_blank" rel="noopener noreferrer"' : ""}>${inner}</a>`
         : `<div class="c-card">${inner}</div>`;
     })
     .join("");
+
+  const mapFrame = $("#contactMap");
+  if (mapFrame && ok(D.business.mapsEmbed)) {
+    mapFrame.src = D.business.mapsEmbed;
+    mapFrame.hidden = false;
+  }
+
+  const mapsDirect =
+    ok(D.business.mapsLat) && ok(D.business.mapsLng)
+      ? `https://maps.google.com/?q=${D.business.mapsLat},${D.business.mapsLng}`
+      : D.business.mapsUrl;
+  const qrLink = $("#qrMapsLink");
+  const qrImg = $("#qrMapsImg");
+  if (qrLink && ok(mapsDirect)) {
+    qrLink.href = mapsDirect;
+  }
+  if (qrImg && ok(D.business.qrMaps)) {
+    qrImg.src = `${D.business.qrMaps}?v=36`;
+  }
 
   const waBtn = $("#waBtn");
   if (wa) {
@@ -125,8 +138,8 @@
     .map(([k, ik, label]) => {
       const href = D.business.social[k];
       return ok(href)
-        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}">${ICO[ik]}</a>`
-        : `<span title="${label} pendiente" aria-label="${label} pendiente">${ICO[ik]}</span>`;
+        ? `<a class="social social--${k}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}">${ICO[ik]}</a>`
+        : `<span class="social social--${k}" title="${label} pendiente" aria-label="${label} pendiente">${ICO[ik]}</span>`;
     })
     .join("");
 
