@@ -206,6 +206,41 @@ button,input,select,textarea{font:inherit;color:inherit}
   height:1.15rem;
   flex:0 0 auto;
 }
+.btn-wa{
+  gap:.7rem;
+}
+.wa-ico{
+  width:1.55rem;
+  height:1.55rem;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  background:#25d366;
+  color:#fff;
+  box-shadow:0 0 0 2px rgba(255,255,255,.35), 0 4px 12px rgba(37,211,102,.45);
+}
+.wa-ico svg{
+  width:.95rem;
+  height:.95rem;
+  display:block;
+}
+.btn-wa:hover .wa-ico{
+  transform:scale(1.08);
+  box-shadow:0 0 0 2px rgba(255,255,255,.45), 0 0 16px rgba(37,211,102,.65);
+}
+.btn-compact.btn-wa{
+  gap:.45rem;
+  padding-left:.85rem;
+}
+.btn-compact .wa-ico{
+  width:1.25rem;
+  height:1.25rem;
+}
+.btn-compact .wa-ico svg{
+  width:.78rem;
+  height:.78rem;
+}
 .trust-bar{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));

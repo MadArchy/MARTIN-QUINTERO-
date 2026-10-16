@@ -117,14 +117,24 @@
     qrImg.src = `${D.business.qrMaps}?v=36`;
   }
 
-  const waBtn = $("#waBtn");
+  const bindWa = (el) => {
+    if (!el) return;
+    if (wa) {
+      el.href = wa;
+      el.target = "_blank";
+      el.rel = "noopener noreferrer";
+    } else {
+      el.href = "#contacto";
+      el.removeAttribute("target");
+      el.removeAttribute("rel");
+    }
+  };
+  bindWa($("#waBtn"));
+  bindWa($("#waHeroBtn"));
+  bindWa($("#waHeaderBtn"));
   if (wa) {
-    waBtn.href = wa;
-    waBtn.target = "_blank";
-    waBtn.rel = "noopener noreferrer";
     $("#waNote").textContent = "";
-  } else {
-    waBtn.href = "#contacto";
+  } else if ($("#waNote")) {
     $("#waNote").textContent = "Configura WhatsApp en web/js/data.js para activar el enlace real.";
   }
 
